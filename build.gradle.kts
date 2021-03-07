@@ -1,10 +1,10 @@
 plugins {
     kotlin("multiplatform") version "1.4.30"
-    id("maven-publish")
+    id("convention.publication")
 }
 
 group = "io.github.katerinapetrova"
-version = "1.0.0"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -28,7 +28,7 @@ kotlin {
             }
         }
     }
-    
+
     sourceSets {
         val commonMain by getting
         val commonTest by getting {

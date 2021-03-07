@@ -7,5 +7,6 @@ pluginManagement {
     }
 }
 
+includeBuild("convention-plugins")
 rootProject.name = "mpp-sample-lib"
 

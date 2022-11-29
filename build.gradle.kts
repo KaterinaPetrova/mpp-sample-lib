@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.4.30"
+    kotlin("multiplatform") version "1.7.21"
     id("convention.publication")
 }
 
@@ -23,7 +23,12 @@ kotlin {
             testTask {
                 useKarma {
                     useChromeHeadless()
-                    webpackConfig.cssSupport.enabled = true
+                }
+
+            }
+            commonWebpackConfig {
+                cssSupport {
+                    enabled = true
                 }
             }
         }
@@ -33,8 +38,7 @@ kotlin {
         val commonMain by getting
         val commonTest by getting {
             dependencies {
-                implementation(kotlin("test-common"))
-                implementation(kotlin("test-annotations-common"))
+                implementation(kotlin("test"))
             }
         }
         val jvmMain by getting

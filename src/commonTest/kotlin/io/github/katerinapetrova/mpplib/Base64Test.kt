@@ -22,6 +22,6 @@ class Base64Test {
     }
 
     private fun String.asciiToByteArray() = ByteArray(length) {
-        get(it).toByte()
+        get(it).code.toByte()
     }
 }

@@ -24,7 +24,6 @@ kotlin {
                 useKarma {
                     useChromeHeadless()
                 }
-
             }
             commonWebpackConfig {
                 cssSupport {

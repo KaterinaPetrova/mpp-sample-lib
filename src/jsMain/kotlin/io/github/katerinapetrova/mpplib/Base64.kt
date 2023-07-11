@@ -6,7 +6,6 @@ actual object Base64Factory {
 
 object JsBase64Encoder : Base64Encoder {
     override fun encode(src: ByteArray): ByteArray {
-        println("Input: $src")
         val binString = src.decodeToString()
         return Base64.encode(binString).encodeToByteArray()
     }

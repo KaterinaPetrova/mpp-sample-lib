@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.4.30"
+    kotlin("multiplatform") version "1.8.20"
     id("convention.publication")
 }
 
@@ -16,6 +16,7 @@ kotlin {
             kotlinOptions.jvmTarget = "1.8"
         }
     }
+
     ios()
 
     js(IR) {
@@ -23,13 +24,17 @@ kotlin {
             testTask {
                 useKarma {
                     useChromeHeadless()
-                    webpackConfig.cssSupport.enabled = true
+                    webpackConfig.cssSupport {
+                        enabled.set(true)
+                    }
                 }
             }
         }
     }
 
     sourceSets {
+        targetHierarchy.default()
+
         val commonMain by getting
         val commonTest by getting {
             dependencies {

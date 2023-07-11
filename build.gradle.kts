@@ -52,6 +52,7 @@ kotlin {
         val jsTest by getting {
             dependencies {
                 implementation(kotlin("test-js"))
+                implementation(npm("base-64", "1.0.0"))
             }
         }
         val iosMain by getting

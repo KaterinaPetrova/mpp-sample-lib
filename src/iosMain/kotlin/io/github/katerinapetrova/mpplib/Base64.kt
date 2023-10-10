@@ -27,10 +27,10 @@ object NativeBase64Encoder : Base64Encoder {
 
             for (i in 3 downTo padSize) {
                 val char = (chunk shr (6 * i)) and BASE64_MASK.toInt()
-                result.add(char.toBase64().toByte())
+                result.add(char.toBase64().code.toByte())
             }
             // Fill the pad with '='
-            repeat(padSize) { result.add(BASE64_PAD.toByte()) }
+            repeat(padSize) { result.add(BASE64_PAD.code.toByte()) }
         }
 
         return result.toByteArray()

@@ -6,6 +6,13 @@ pluginManagement {
     }
 }
 
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
 includeBuild("convention-plugins")
 rootProject.name = "mpp-sample-lib"
 

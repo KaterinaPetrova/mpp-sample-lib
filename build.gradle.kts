@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform").version("1.9.20-Beta2")
+    kotlin("multiplatform").version("1.9.20-RC")
     id("convention.publication")
 }
 
